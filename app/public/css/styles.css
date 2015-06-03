@@ -109,9 +109,9 @@ html {
 	cursor: pointer;
 }
 
-/*.foodTypesList__item::after {
+.foodTypesList__item::after {
 	content: '\00a0\00bb';
-}*/
+}
 
 .trucksList__item:hover {
 	background-color: #ddd;

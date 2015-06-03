@@ -53,6 +53,7 @@ FTF.ResultsView = (function ($, _, Backbone, Vent, FoodTrucksView, FoodTypesView
 			}
 
 			if (options) {
+				console.log('options: ', options);
 				filteredTrucks = new FoodTrucks(this.collection.getTrucksByFoodType(options.type));
 				this.listView = new TrucksByTypeView({ collection: filteredTrucks, type: options.type });
 				this.$el.append(this.listView.render().el);
