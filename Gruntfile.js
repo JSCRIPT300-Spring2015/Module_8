@@ -5,8 +5,9 @@ module.exports = function (grunt) {
 			namespace: 'TFT'
 		},
 		files: {
-			'app/public/js/templates/templates.js': ['app/public/js/templates/**/*.html']
+			'app/public/js/templates/templates.js': ['**/**/*.tpl']
 		}
 	});
 	grunt.loadNpmTasks('grunt-contrib-jst');
+	grunt.registerTask('default', ['jst']);
 };
