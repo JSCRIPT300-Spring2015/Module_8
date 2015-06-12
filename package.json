@@ -20,11 +20,15 @@
   },
   "homepage": "https://github.com/JSCRIPT300-Spring2015/Module_8",
   "dependencies": {
+    "backbone": "^1.2.1",
     "express": "^4.12.4",
-    "mongoose": "^4.0.4"
+    "jquery": "^2.1.4",
+    "mongoose": "^4.0.4",
+    "underscore": "^1.8.3"
   },
   "devDependencies": {
     "grunt": "^0.4.5",
+    "grunt-browserify": "^3.8.0",
     "grunt-contrib-jst": "^0.6.0"
   }
 }
