@@ -1,17 +1,19 @@
-FTF = window.FTF || {};
-FTF.AppView = (function ($, _, Backbone, NavView, ResultsView, FoodTrucks) {
+'use strict';
 
-	'use strict';
+var $ = require('jquery');
+var _ = require('underscore');
+var Backbone = require('backbone');
+var NavView = require('./NavView');
+var ResultsView = require('./ResultsView');
+var FoodTrucks = require('../collections/FoodTrucks');
 
-	return Backbone.View.extend({
-		initialize: function () {
+module.exports = Backbone.View.extend({
+	initialize: function () {
 
-			var foodTrucks = new FoodTrucks();
-			var navView = new NavView({ el: '.foodTruckNav' });
-			var resultsView = new ResultsView({ el: '.results', collection: foodTrucks });
-			
-			foodTrucks.fetch();
-		}
-	});
+		var foodTrucks = new FoodTrucks();
+		var navView = new NavView({ el: '.foodTruckNav' });
+		var resultsView = new ResultsView({ el: '.results', collection: foodTrucks });
 
-})(jQuery, _, Backbone, FTF.NavView, FTF.ResultsView, FTF.FoodTrucks);
+		foodTrucks.fetch();
+	}
+});

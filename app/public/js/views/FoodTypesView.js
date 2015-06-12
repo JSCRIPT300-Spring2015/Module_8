@@ -1,35 +1,35 @@
-FTF = window.FTF || {};
-FTF.FoodTypesView = (function ($, _, Backbone, FoodTypesItemView) {
+'use strict';
 
-	'use strict';
+var $ = require('jquery');
+var _ = require('underscore');
+var Backbone = require('backbone');
+var FoodTypesItemView = require('./FoodTypesItemView');
 
-	return Backbone.View.extend({
-		className: 'allFoodTypesList',
-		template: _.template($('#foodTypesTemplate').html()),
-		_children: [],
-		initialize() {
+module.exports = Backbone.View.extend({
+	className: 'allFoodTypesList',
+	template: TFT.foodTypes,
+	_children: [],
+	initialize() {
 
-			this.foodTypes = this.collection.getFoodTypes();
-			this.foodTypes.sort();
-		},
-		render: function () {
-			
-			this.$el.append(this.template());
-			_.each(this.foodTypes, function (type) {
-				var itemView = new FoodTypesItemView({ type: type });
-				this._children.push(itemView);
-				this.$('.foodTypesList').append(itemView.render().el);
-			}, this);
+		this.foodTypes = this.collection.getFoodTypes();
+		this.foodTypes.sort();
+	},
+	render: function () {
+		
+		this.$el.append(this.template());
+		_.each(this.foodTypes, function (type) {
+			var itemView = new FoodTypesItemView({ type: type });
+			this._children.push(itemView);
+			this.$('.foodTypesList').append(itemView.render().el);
+		}, this);
 
-			return this;
-		},
-	 	remove: function () {
+		return this;
+	},
+ 	remove: function () {
 
-	 		_.each(this._children, function (view) {
-	 			view.remove();
-	 		});
-	 		Backbone.View.prototype.remove.call(this);
-	 	}
-	});
-
-})(jQuery, _, Backbone, FTF.FoodTypesItemView);
+ 		_.each(this._children, function (view) {
+ 			view.remove();
+ 		});
+ 		Backbone.View.prototype.remove.call(this);
+ 	}
+});

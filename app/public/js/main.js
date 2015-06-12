@@ -1,4 +1,8 @@
+'use strict';
+
+var $ = require('jquery');
 $(function () {
 
-	var app = new FTF.AppView({ el: 'body' });
+	var AppView = require('./views/AppView');
+	var app = new AppView({ el: 'body' });
 });

@@ -1,33 +1,35 @@
-FTF = window.FTF || {};
-FTF.FoodTrucksView = (function ($, _, Backbone, Vent, FoodTruckItemView, FoodTruckView) {
+'use strict';
 
-	'use strict';
+var $ = require('jquery');
+var _ = require('underscore');
+var Backbone = require('backbone');
+var Vent = require('../events/Vent');
+var FoodTruckItemView = require('./FoodTruckItemView');
+var FoodTruckView = require('./FoodTruckView');
 
-	return Backbone.View.extend({
-	 	className: 'allTrucksList',
-	 	template: _.template($('#allFoodTrucksTemplate').html()),
-	 	_children: [],
-	 	render: function () {
+module.exports = Backbone.View.extend({
+	className: 'allTrucksList',
+ 	template: TFT.allFoodTrucks,
+ 	_children: [],
+ 	render: function () {
 
-	 		this.$el.append(this.template());
+ 		this.$el.append(this.template());
 
-	 		this.collection.each(function (model) {
+ 		this.collection.each(function (model) {
 
-	 			var itemView = new FoodTruckItemView({ model: model });
+ 			var itemView = new FoodTruckItemView({ model: model });
 
-	 			this._children.push(itemView);
-	 			this.$('.trucksList').append(itemView.render().el);
-	 		}, this);
+ 			this._children.push(itemView);
+ 			this.$('.trucksList').append(itemView.render().el);
+ 		}, this);
 
-	 		return this;
-	 	},
-	 	remove: function () {
+ 		return this;
+ 	},
+ 	remove: function () {
 
-	 		_.each(this._children, function (view) {
-	 			view.remove();
-	 		});
-	 		Backbone.View.prototype.remove.call(this);
-	 	}
-	 });
-
-})(jQuery, _, Backbone, FTF.Vent, FTF.FoodTruckItemView, FTF.FoodTruckView);
+ 		_.each(this._children, function (view) {
+ 			view.remove();
+ 		});
+ 		Backbone.View.prototype.remove.call(this);
+ 	}
+});

@@ -1,40 +1,40 @@
-FTF = window.FTF || {};
-FTF.TrucksByTypeView = (function ($, _, Backbone, FoodTruckItemView) {
+'use strict';
 
-	'use strict';
+var $ = require('jquery');
+var _ = require('underscore');
+var Backbone = require('backbone');
+var FoodTruckItemView = require('./FoodTruckItemView');
 
-	return Backbone.View.extend({
-		tagName: 'li',
-		className: 'foodTrucksList',
-		template: _.template($('#trucksByTypeTemplate').html()),
-		_children: [],
-		initialize: function (options) {
+module.exports = Backbone.View.extend({
+	tagName: 'li',
+	className: 'foodTrucksList',
+	template: TFT.trucksByType,
+	_children: [],
+	initialize: function (options) {
 
-			if (options) {
-				this.type = options.type;
-			}
-		},
-		render: function () {
-
-			var data = { type: this.type };
-
-			this.$el.append(this.template(data));
-			this.collection.each(function (model) {
-				var itemView = new FoodTruckItemView({ model: model });
-
-				this._children.push(itemView);
-				this.$('.trucksList').append(itemView.render().el);
-			}, this);
-
-			return this;
-		},
-		remove: function () {
-
-			_.each(this._children, function (view) {
-				view.remove();
-			});
-			Backbone.View.prototype.remove.call(this);
+		if (options) {
+			this.type = options.type;
 		}
-	});
+	},
+	render: function () {
 
-})(jQuery, _, Backbone, FTF.FoodTruckItemView);
+		var data = { type: this.type };
+
+		this.$el.append(this.template(data));
+		this.collection.each(function (model) {
+			var itemView = new FoodTruckItemView({ model: model });
+
+			this._children.push(itemView);
+			this.$('.trucksList').append(itemView.render().el);
+		}, this);
+
+		return this;
+	},
+	remove: function () {
+
+		_.each(this._children, function (view) {
+			view.remove();
+		});
+		Backbone.View.prototype.remove.call(this);
+	}
+});

@@ -1,17 +1,16 @@
-FTF = window.FTF || {};
-FTF.FoodTruckView = (function ($, _, Backbone) {
+'use strict';
 
-	'use strict';
+var $ = require('jquery');
+var _ = require('underscore');
+var Backbone = require('backbone');
 
-	return Backbone.View.extend({
-		className: 'truckDetail',
-		template: _.template($('#foodTruckTemplate').html()),
-		render: function () {
+module.exports = Backbone.View.extend({
+	className: 'truckDetail',
+	template: TFT.foodTruck,
+	render: function () {
 
-			this.$el.append(this.template(this.model.toJSON()));
-			
-			return this;
-		}
-	});
+		this.$el.append(this.template(this.model.toJSON()));
 
-})(jQuery, _, Backbone);
+		return this;
+	}
+});
