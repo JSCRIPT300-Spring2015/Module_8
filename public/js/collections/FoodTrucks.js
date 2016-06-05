@@ -37,7 +37,7 @@ var FoodTruck = require('../models/FoodTruck');
 
 module.exports = Backbone.Collection.extend({
  	model: FoodTruck,
- 	url: '/trucks',
+ 	url: '/api/trucks',
  	getFoodTypes: function () {
 
  		return _.uniq(_.flatten(this.map(function (model) {
