@@ -1,7 +1,7 @@
 'use strict';
 
 var $ = require('jquery');
-var _ = require('underscore');
+var _ = require('lodash');
 var Backbone = require('backbone');
 var FoodTruckItemView = require('./FoodTruckItemView');
 
