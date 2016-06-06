@@ -14,9 +14,7 @@ module.exports = Backbone.View.extend({
   render: function () {
 
     this.$el.append(this.template());
-
     this.collection.each(function (model) {
-
       var itemView = new FoodTruckItemView({ model: model });
 
       this._children.push(itemView);
@@ -27,7 +25,7 @@ module.exports = Backbone.View.extend({
   },
   remove: function () {
 
-    _.each(this._children, function (view) {
+    this._children.forEach(function (view) {
       view.remove();
     });
     Backbone.View.prototype.remove.call(this);

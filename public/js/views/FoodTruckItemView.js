@@ -10,19 +10,19 @@ module.exports = Backbone.View.extend({
   className: 'trucksList__item',
   template: TFT.foodTruckListItem,
   events: {
-    'click': 'handleClick'
+    'click a': 'handleClick'
   },
   render: function () {
-
     var data = _.extend(this.model.attributes, this.model.id);
 
     this.$el.append(this.template(data));
 
     return this;
   },
-  handleClick: function (e) {
+  handleClick: function (ev) {
 
-    e.preventDefault();
-    Vent.trigger('foodTruck:selected', { model: this.model });
+    ev.preventDefault();
+    var path  = ev.currentTarget.href.replace(location.origin, '');
+    Vent.trigger('foodTruck:selected', { model: this.model, path: path });
   }
 });

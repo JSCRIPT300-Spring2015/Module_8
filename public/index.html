@@ -10,21 +10,31 @@
   <div class="container">
     <header>
       <div class="logo">
-        <a href="/" class="logo__link"><img src="/img/foodTruck.svg" alt="Food Truck Finder Food Truck"/></a>
+        <a href="/" class="logo__link">
+          <img src="/img/foodTruck.svg" alt="Food Truck Finder Food Truck"/>
+        </a>
       </div>
       <h1 class="pageHeading">
         <span class="pageHeading__word">Food</span>
         <span class="pageHeading__word">Truck</span>
         <span class="pageHeading__word">Finder</span>
       </h1>
-      <ul class="foodTruckNav">
-        <li class="foodTruckNav__item"><button type="button" id="allTrucks" class="navButton">All Trucks</button></li>
-        <li class="foodTruckNav__item"><button type="button" id="foodTypes" class="navButton">Food Types</button></li>
-        <li class="foodTruckNav__item"><button type="button" id="today" class="navButton">Today</button></li>
-      </ul>
+      <nav id="foodTruckNav">
+        <ul class="foodTruckNav__list">
+          <li class="foodTruckNav__item">
+            <a id="allTrucks" href="/food-trucks" class="navLink">All Trucks</a>
+          </li>
+          <li class="foodTruckNav__item">
+            <a id="foodTypes" href="/food-types" class="navLink">Food Types</a>
+          </li>
+          <li class="foodTruckNav__item">
+            <a id="today" href="/today" class="navLink">Today</a>
+          </li>
+        </ul>
+      </nav>
     </header>
     <section role="main">
-      <div class="results"></div>
+      <div id="results"></div>
     </section>
   </div>
 

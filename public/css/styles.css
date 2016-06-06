@@ -42,7 +42,7 @@ html {
   padding: 0 15px;
 }
 
-.foodTruckNav {
+.foodTruckNav__list {
   list-style-type: none;
   padding: 0;
   text-align: center;
@@ -54,24 +54,26 @@ html {
   margin: 10px 0;
 }
 
-.navButton {
+.navLink {
+  display: inline-block;
   width: 100%;
   min-width: 118px;
   font-size: 1.6rem;
   color: #f7f7f7;
+  text-decoration: none;
   background-color: #bf0000;
   padding: 12px 15px;
   border: none;
   border-radius: 6px;
 }
 
-.navButton:hover {
+.navLink:hover {
   background-color: #bf6666;
   cursor: pointer;
 }
 
-.navButton:active,
-.navButton:focus {
+.navLink:active,
+.navLink:focus {
   outline: none;
 }
 
@@ -149,6 +151,21 @@ html {
   font-weight: bold;
   color: #f96a02;
   margin: 0;
+}
+
+.foodTypeLink,
+.foodTypeLink:visited {
+  text-decoration: none;
+  color: #555;
+  transition: text-decoration .5s ease-in-out;
+}
+
+.foodTypeLink:hover {
+  text-decoration: underline;
+}
+
+.truckLink {
+  text-decoration: none;
 }
 
 .trucksList__link {

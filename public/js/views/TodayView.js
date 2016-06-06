@@ -31,7 +31,7 @@ module.exports = Backbone.View.extend({
   },
   remove: function () {
 
-    _.each(this._children, function (view) {
+    this._children.forEach(function (view) {
       view.remove();
     });
     Backbone.View.prototype.remove.call(this);

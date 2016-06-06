@@ -1,1 +1,1 @@
-<span><%= type %></span>
+<a class="foodTypeLink" href="/food-types/<%= encodeURIComponent(type) %>"><%= type %></a>

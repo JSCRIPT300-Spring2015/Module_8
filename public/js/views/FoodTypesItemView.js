@@ -16,7 +16,7 @@ module.exports = Backbone.View.extend({
     }
   },
   events: {
-    'click': 'handleClick'
+    'click a': 'handleClick'
   },
   render: function () {
 
@@ -26,9 +26,10 @@ module.exports = Backbone.View.extend({
 
     return this;
   },
-  handleClick: function (e) {
+  handleClick: function (ev) {
 
-    e.preventDefault();
-    Vent.trigger('foodType:selected', { type: this.type });
+    ev.preventDefault();
+    var path  = ev.currentTarget.href.replace(location.origin, '');
+    Vent.trigger('foodType:selected', { type: this.type, path: path });
   }
 });

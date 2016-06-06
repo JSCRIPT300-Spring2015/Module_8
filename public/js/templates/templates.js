@@ -4,7 +4,7 @@ this["TFT"]["allFoodTrucks"] = function(obj) {
 obj || (obj = {});
 var __t, __p = '', __e = _.escape;
 with (obj) {
-__p += '<h2 class="listHeading">All Trucks</h2>\n<ul class="trucksList"></ul>';
+__p += '<h2 class="listHeading">All Trucks</h2>\n<ul class="trucksList"></ul>\n';
 
 }
 return __p
@@ -55,7 +55,7 @@ __p += '\n\t\t<li class="detailList__item">\n\t\t\t<p class="detailList__categor
 ((__t = ( Twitter )) == null ? '' : __t) +
 '" class="detailList__link">Twitter</a></p>\n\t\t</li>\n\t';
  } ;
-__p += '\n\n</ul>';
+__p += '\n\n</ul>\n';
 
 }
 return __p
@@ -65,11 +65,13 @@ this["TFT"]["foodTruckListItem"] = function(obj) {
 obj || (obj = {});
 var __t, __p = '', __e = _.escape;
 with (obj) {
-__p += '<h2 class="detailHeading">' +
+__p += '<a class="truckLink" href="/food-trucks/' +
 ((__t = ( name )) == null ? '' : __t) +
-'</h2>\n<p class="foodType">' +
+'">\n  <h2 class="detailHeading">' +
+((__t = ( name )) == null ? '' : __t) +
+'</h2>\n  <p class="foodType">' +
 ((__t = ( foodType.join(', ') )) == null ? '' : __t) +
-'</p>';
+'</p>\n</a>\n';
 
 }
 return __p
@@ -79,9 +81,11 @@ this["TFT"]["foodTypeListItem"] = function(obj) {
 obj || (obj = {});
 var __t, __p = '', __e = _.escape;
 with (obj) {
-__p += '<span>' +
+__p += '<a class="foodTypeLink" href="/food-types/' +
+((__t = ( encodeURIComponent(type) )) == null ? '' : __t) +
+'">' +
 ((__t = ( type )) == null ? '' : __t) +
-'</span>';
+'</a>\n';
 
 }
 return __p
@@ -91,7 +95,7 @@ this["TFT"]["foodTypes"] = function(obj) {
 obj || (obj = {});
 var __t, __p = '', __e = _.escape;
 with (obj) {
-__p += '<h2 class="listHeading">All Food Types</h2>\n<ul class="foodTypesList"></ul>';
+__p += '<h2 class="listHeading">All Food Types</h2>\n<ul class="foodTypesList"></ul>\n';
 
 }
 return __p
@@ -103,7 +107,7 @@ var __t, __p = '', __e = _.escape;
 with (obj) {
 __p += '<h2 class="listHeading">Food trucks for ' +
 ((__t = ( type )) == null ? '' : __t) +
-'</h2>\n<ul class="trucksList"></ul>';
+'</h2>\n<ul class="trucksList"></ul>\n';
 
 }
 return __p
@@ -115,7 +119,7 @@ var __t, __p = '', __e = _.escape;
 with (obj) {
 __p += '<h2 class="listHeading">Food trucks available on ' +
 ((__t = ( today )) == null ? '' : __t) +
-'</h2>\n<ul class="trucksList"></ul>';
+'</h2>\n<ul class="trucksList"></ul>\n';
 
 }
 return __p
