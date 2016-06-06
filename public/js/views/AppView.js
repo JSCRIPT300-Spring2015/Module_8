@@ -1,7 +1,5 @@
 'use strict';
 
-var $ = require('jquery');
-var _ = require('lodash');
 var Backbone = require('backbone');
 var NavView = require('./NavView');
 var AppRouter = require('../routers/AppRouter');

@@ -1,9 +1,8 @@
 'use strict';
 
-var $ = require('jquery');
 var _ = require('lodash');
 var Backbone = require('backbone');
-var Vent = require('../events/Vent');
+var vent = require('../events/Vent');
 
 module.exports = Backbone.View.extend({
   tagName: 'li',
@@ -23,6 +22,6 @@ module.exports = Backbone.View.extend({
 
     ev.preventDefault();
     var path  = ev.currentTarget.href.replace(location.origin, '');
-    Vent.trigger('foodTruck:selected', { model: this.model, path: path });
+    vent.trigger('foodTruck:selected', { model: this.model, path: path });
   }
 });

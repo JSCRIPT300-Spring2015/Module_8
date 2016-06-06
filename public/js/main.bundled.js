@@ -29699,7 +29699,6 @@ return jQuery;
 },{}],5:[function(require,module,exports){
 'use strict';
 
-var $ = require('jquery');
 var _ = require('lodash');
 var Backbone = require('backbone');
 var FoodTruck = require('../models/FoodTruck');
@@ -29728,12 +29727,11 @@ module.exports = Backbone.Collection.extend({
   }
 });
 
-},{"../models/FoodTruck":9,"backbone":1,"jquery":2,"lodash":3}],6:[function(require,module,exports){
+},{"../models/FoodTruck":9,"backbone":1,"lodash":3}],6:[function(require,module,exports){
 'use strict';
 
 var ResultsView = require('../views/ResultsView');
 var FoodTrucks = require('../collections/FoodTrucks');
-var _ = require('lodash');
 var vent = require('../events/Vent');
 
 var foodTrucks = new FoodTrucks();
@@ -29798,15 +29796,15 @@ module.exports = {
   showFoodTrucksToday: showFoodTrucksToday
 };
 
-},{"../collections/FoodTrucks":5,"../events/Vent":7,"../views/ResultsView":18,"lodash":3}],7:[function(require,module,exports){
+},{"../collections/FoodTrucks":5,"../events/Vent":7,"../views/ResultsView":18}],7:[function(require,module,exports){
 'use strict';
 
-var $ = require('jquery');
 var _ = require('lodash');
 var Backbone = require('backbone');
 
 module.exports = _.extend({}, Backbone.Events);
-},{"backbone":1,"jquery":2,"lodash":3}],8:[function(require,module,exports){
+
+},{"backbone":1,"lodash":3}],8:[function(require,module,exports){
 'use strict';
 
 var $ = require('jquery');
@@ -29815,11 +29813,10 @@ $(function () {
   var AppView = require('./views/AppView');
   var app = new AppView({ el: 'body' });
 });
+
 },{"./views/AppView":11,"jquery":2}],9:[function(require,module,exports){
 'use strict';
 
-var $ = require('jquery');
-var _ = require('lodash');
 var Backbone = require('backbone');
 
 module.exports = Backbone.Model.extend({
@@ -29835,7 +29832,8 @@ module.exports = Backbone.Model.extend({
     Twitter: ''
   }
 });
-},{"backbone":1,"jquery":2,"lodash":3}],10:[function(require,module,exports){
+
+},{"backbone":1}],10:[function(require,module,exports){
 'use strict';
 var Backbone = require('backbone');
 
@@ -29871,11 +29869,10 @@ module.exports = Backbone.Router.extend({
     this.appController.showFoodTrucksToday();
   }
 });
+
 },{"backbone":1}],11:[function(require,module,exports){
 'use strict';
 
-var $ = require('jquery');
-var _ = require('lodash');
 var Backbone = require('backbone');
 var NavView = require('./NavView');
 var AppRouter = require('../routers/AppRouter');
@@ -29908,13 +29905,13 @@ module.exports = Backbone.View.extend({
     this.appRouter.navigate(options.path);
   }
 });
-},{"../controllers/AppController":6,"../events/Vent":7,"../routers/AppRouter":10,"./NavView":17,"backbone":1,"jquery":2,"lodash":3}],12:[function(require,module,exports){
+
+},{"../controllers/AppController":6,"../events/Vent":7,"../routers/AppRouter":10,"./NavView":17,"backbone":1}],12:[function(require,module,exports){
 'use strict';
 
-var $ = require('jquery');
 var _ = require('lodash');
 var Backbone = require('backbone');
-var Vent = require('../events/Vent');
+var vent = require('../events/Vent');
 
 module.exports = Backbone.View.extend({
   tagName: 'li',
@@ -29934,14 +29931,12 @@ module.exports = Backbone.View.extend({
 
     ev.preventDefault();
     var path  = ev.currentTarget.href.replace(location.origin, '');
-    Vent.trigger('foodTruck:selected', { model: this.model, path: path });
+    vent.trigger('foodTruck:selected', { model: this.model, path: path });
   }
 });
-},{"../events/Vent":7,"backbone":1,"jquery":2,"lodash":3}],13:[function(require,module,exports){
+},{"../events/Vent":7,"backbone":1,"lodash":3}],13:[function(require,module,exports){
 'use strict';
 
-var $ = require('jquery');
-var _ = require('lodash');
 var Backbone = require('backbone');
 
 module.exports = Backbone.View.extend({
@@ -29954,13 +29949,10 @@ module.exports = Backbone.View.extend({
     return this;
   }
 });
-},{"backbone":1,"jquery":2,"lodash":3}],14:[function(require,module,exports){
+},{"backbone":1}],14:[function(require,module,exports){
 'use strict';
 
-var $ = require('jquery');
-var _ = require('lodash');
 var Backbone = require('backbone');
-var Vent = require('../events/Vent');
 var FoodTruckItemView = require('./FoodTruckItemView');
 var FoodTruckView = require('./FoodTruckView');
 
@@ -29988,13 +29980,12 @@ module.exports = Backbone.View.extend({
     Backbone.View.prototype.remove.call(this);
   }
 });
-},{"../events/Vent":7,"./FoodTruckItemView":12,"./FoodTruckView":13,"backbone":1,"jquery":2,"lodash":3}],15:[function(require,module,exports){
+
+},{"./FoodTruckItemView":12,"./FoodTruckView":13,"backbone":1}],15:[function(require,module,exports){
 'use strict';
 
-var $ = require('jquery');
-var _ = require('lodash');
 var Backbone = require('backbone');
-var Vent = require('../events/Vent');
+var vent = require('../events/Vent');
 
 module.exports = Backbone.View.extend({
   tagName: 'li',
@@ -30021,14 +30012,13 @@ module.exports = Backbone.View.extend({
 
     ev.preventDefault();
     var path  = ev.currentTarget.href.replace(location.origin, '');
-    Vent.trigger('foodType:selected', { type: this.type, path: path });
+    vent.trigger('foodType:selected', { type: this.type, path: path });
   }
 });
-},{"../events/Vent":7,"backbone":1,"jquery":2,"lodash":3}],16:[function(require,module,exports){
+
+},{"../events/Vent":7,"backbone":1}],16:[function(require,module,exports){
 'use strict';
 
-var $ = require('jquery');
-var _ = require('lodash');
 var Backbone = require('backbone');
 var FoodTypesItemView = require('./FoodTypesItemView');
 
@@ -30060,11 +30050,9 @@ module.exports = Backbone.View.extend({
     Backbone.View.prototype.remove.call(this);
   }
 });
-},{"./FoodTypesItemView":15,"backbone":1,"jquery":2,"lodash":3}],17:[function(require,module,exports){
+},{"./FoodTypesItemView":15,"backbone":1}],17:[function(require,module,exports){
 'use strict';
 
-var $ = require('jquery');
-var _ = require('lodash');
 var Backbone = require('backbone');
 var vent = require('../events/Vent');
 
@@ -30090,13 +30078,11 @@ module.exports = Backbone.View.extend({
     vent.trigger('today:selected', { path: path });
   }
 });
-},{"../events/Vent":7,"backbone":1,"jquery":2,"lodash":3}],18:[function(require,module,exports){
+
+},{"../events/Vent":7,"backbone":1}],18:[function(require,module,exports){
 'use strict';
 
-var $ = require('jquery');
-var _ = require('lodash');
 var Backbone = require('backbone');
-var Vent = require('../events/Vent');
 var FoodTrucksView = require('./FoodTrucksView');
 var FoodTypesView = require('./FoodTypesView');
 var TodayView = require('./TodayView');
@@ -30162,11 +30148,10 @@ module.exports = Backbone.View.extend({
     }
   }
 });
-},{"../collections/FoodTrucks":5,"../events/Vent":7,"./FoodTruckView":13,"./FoodTrucksView":14,"./FoodTypesView":16,"./TodayView":19,"./TrucksByTypeView":20,"backbone":1,"jquery":2,"lodash":3}],19:[function(require,module,exports){
+
+},{"../collections/FoodTrucks":5,"./FoodTruckView":13,"./FoodTrucksView":14,"./FoodTypesView":16,"./TodayView":19,"./TrucksByTypeView":20,"backbone":1}],19:[function(require,module,exports){
 'use strict';
 
-var $ = require('jquery');
-var _ = require('lodash');
 var Backbone = require('backbone');
 var FoodTruckItemView = require('./FoodTruckItemView');
 
@@ -30202,11 +30187,9 @@ module.exports = Backbone.View.extend({
     Backbone.View.prototype.remove.call(this);
   }
 });
-},{"./FoodTruckItemView":12,"backbone":1,"jquery":2,"lodash":3}],20:[function(require,module,exports){
+},{"./FoodTruckItemView":12,"backbone":1}],20:[function(require,module,exports){
 'use strict';
 
-var $ = require('jquery');
-var _ = require('lodash');
 var Backbone = require('backbone');
 var FoodTruckItemView = require('./FoodTruckItemView');
 
@@ -30243,4 +30226,4 @@ module.exports = Backbone.View.extend({
     Backbone.View.prototype.remove.call(this);
   }
 });
-},{"./FoodTruckItemView":12,"backbone":1,"jquery":2,"lodash":3}]},{},[8]);
+},{"./FoodTruckItemView":12,"backbone":1}]},{},[8]);

@@ -1,9 +1,6 @@
 'use strict';
 
-var $ = require('jquery');
-var _ = require('lodash');
 var Backbone = require('backbone');
-var Vent = require('../events/Vent');
 var FoodTrucksView = require('./FoodTrucksView');
 var FoodTypesView = require('./FoodTypesView');
 var TodayView = require('./TodayView');

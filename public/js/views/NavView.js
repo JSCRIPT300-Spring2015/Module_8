@@ -1,7 +1,5 @@
 'use strict';
 
-var $ = require('jquery');
-var _ = require('lodash');
 var Backbone = require('backbone');
 var vent = require('../events/Vent');
 

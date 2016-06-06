@@ -2,7 +2,6 @@
 
 var ResultsView = require('../views/ResultsView');
 var FoodTrucks = require('../collections/FoodTrucks');
-var _ = require('lodash');
 var vent = require('../events/Vent');
 
 var foodTrucks = new FoodTrucks();
