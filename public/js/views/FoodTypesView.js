@@ -9,7 +9,7 @@ module.exports = Backbone.View.extend({
 	className: 'allFoodTypesList',
 	template: TFT.foodTypes,
 	_children: [],
-	initialize() {
+	initialize: function () {
 
 		this.foodTypes = this.collection.getFoodTypes();
 		this.foodTypes.sort();
@@ -17,7 +17,7 @@ module.exports = Backbone.View.extend({
 	render: function () {
 		
 		this.$el.append(this.template());
-		_.each(this.foodTypes, function (type) {
+		this.foodTypes.forEach(function (type) {
 			var itemView = new FoodTypesItemView({ type: type });
 			this._children.push(itemView);
 			this.$('.foodTypesList').append(itemView.render().el);
@@ -27,7 +27,7 @@ module.exports = Backbone.View.extend({
 	},
  	remove: function () {
 
- 		_.each(this._children, function (view) {
+ 		this._children.forEach(function (view) {
  			view.remove();
  		});
  		Backbone.View.prototype.remove.call(this);
