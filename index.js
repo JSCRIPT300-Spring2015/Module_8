@@ -1,6 +1,6 @@
 var express = require('express');
 var path = require('path');
-var fallback = require('express-history-api-fallback');
+var spaRoute = require('./utils/spa-server-route');
 var mongoose = require('mongoose');
 var truckAPIRouter = require('./routes/truckRoutes');
 
@@ -12,7 +12,7 @@ var root = path.resolve(__dirname, 'public');
 
 app.use(express.static(root));
 app.use('/api/trucks', truckAPIRouter);
-app.use(fallback('index.html', { root: root }))
+app.use(spaRoute(path.resolve(root, 'index.html')));
 
 app.listen(port, function () {
   console.log('listening on port ', port);
