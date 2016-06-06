@@ -15,5 +15,5 @@ app.use('/api/trucks', truckAPIRouter);
 app.use(fallback('index.html', { root: root }))
 
 app.listen(port, function () {
-	console.log('listening on port ', port);
+  console.log('listening on port ', port);
 });

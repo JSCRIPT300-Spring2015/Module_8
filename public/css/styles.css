@@ -1,189 +1,189 @@
 html {
-	font-size: 10px;
-	font-family: Helvetica, Arial, sans-serif;
+  font-size: 10px;
+  font-family: Helvetica, Arial, sans-serif;
 }
 
 * {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .logo {
-	max-width: 320px;
-	min-width: 120px;
-	margin: -40px auto 0 auto;
-	text-align: center;
+  max-width: 320px;
+  min-width: 120px;
+  margin: -40px auto 0 auto;
+  text-align: center;
 }
 
 .logo__link {
-	display: inline-block;
-	text-align: center;
+  display: inline-block;
+  text-align: center;
 }
 
 .pageHeading {
-	width: ;
-	margin: 0 auto 20px auto;
-	text-align: center;
+  width: ;
+  margin: 0 auto 20px auto;
+  text-align: center;
 }
 
 .pageHeading__word {
-	display: block;
-	font-size: 3rem;
-	font-family: Verdana, sans-serif;
-	color: #bf0000;
-	line-height: 1.4;
-	letter-spacing: 1.8rem;
+  display: block;
+  font-size: 3rem;
+  font-family: Verdana, sans-serif;
+  color: #bf0000;
+  line-height: 1.4;
+  letter-spacing: 1.8rem;
 }
 
 .logo img {
-	width: 100%;
+  width: 100%;
 }
 
 .container {
-	padding: 0 15px;
+  padding: 0 15px;
 }
 
 .foodTruckNav {
-	list-style-type: none;
-	padding: 0;
-	text-align: center;
+  list-style-type: none;
+  padding: 0;
+  text-align: center;
 }
 
 .foodTruckNav__item {
-	display: block;
-	padding: 0;
-	margin: 10px 0;
+  display: block;
+  padding: 0;
+  margin: 10px 0;
 }
 
 .navButton {
-	width: 100%;
-	min-width: 118px;
-	font-size: 1.6rem;
-	color: #f7f7f7;
-	background-color: #bf0000;
-	padding: 12px 15px;
-	border: none;
-	border-radius: 6px;
+  width: 100%;
+  min-width: 118px;
+  font-size: 1.6rem;
+  color: #f7f7f7;
+  background-color: #bf0000;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 6px;
 }
 
 .navButton:hover {
-	background-color: #bf6666;
-	cursor: pointer;
+  background-color: #bf6666;
+  cursor: pointer;
 }
 
 .navButton:active,
 .navButton:focus {
-	outline: none;
+  outline: none;
 }
 
 .results {
-	max-width: 480px;
-	margin: 0 auto;
+  max-width: 480px;
+  margin: 0 auto;
 }
 
 .listHeading {
-	font-size: 2rem;
-	color: #bf0000;
+  font-size: 2rem;
+  color: #bf0000;
 }
 
 .trucksList,
 .foodTypesList,
 .detailList {
-	list-style-type: none;
-	font-size: 1.6rem;
-	font-weight: bold;
-	color: #555;
-	padding: 0;
+  list-style-type: none;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #555;
+  padding: 0;
 }
 
 .trucksList__item {
-	background-color: #ededed;
-	padding: 10px 15px;
-	min-width: 240px;
-	margin: 0 0 5px 0;
-	cursor: pointer;
+  background-color: #ededed;
+  padding: 10px 15px;
+  min-width: 240px;
+  margin: 0 0 5px 0;
+  cursor: pointer;
 }
 
 .foodTypesList__item {
-	padding: 5px 0;
-	margin-bottom: 10px;
-	cursor: pointer;
+  padding: 5px 0;
+  margin-bottom: 10px;
+  cursor: pointer;
 }
 
 .foodTypesList__item::after {
-	content: '\00a0\00bb';
+  content: '\00a0\00bb';
 }
 
 .trucksList__item:hover {
-	background-color: #ddd;
+  background-color: #ddd;
 }
 
 .foodTypesList__item:hover {
-	color: #f96a02;
+  color: #f96a02;
 }
 
 .truckDetail {
-	padding: 20px 15px;
-	margin-top: 20px;
-	border: 2px solid #bf0000;
-	background-color: #ededed;
+  padding: 20px 15px;
+  margin-top: 20px;
+  border: 2px solid #bf0000;
+  background-color: #ededed;
 }
 
 .detailHeading {
-	font-size: 2rem;
-	color: #555;
-	margin: 0 0 10px 0;
+  font-size: 2rem;
+  color: #555;
+  margin: 0 0 10px 0;
 }
 
 .detailList__link,
 .detailList__link:visited {
-	color: #bf0000;
-	font-weight: bold;
+  color: #bf0000;
+  font-weight: bold;
 }
 
 .detailList__category {
-	font-weight: normal;
+  font-weight: normal;
 }
 
 .foodType {
-	font-size: 1.6rem;
-	font-weight: bold;
-	color: #f96a02;
-	margin: 0;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #f96a02;
+  margin: 0;
 }
 
 .trucksList__link {
-	display: inline-block;
-	text-decoration: none;
-	margin-bottom: 10px;
-	color: #555;
-	font-size: 1.8rem;
+  display: inline-block;
+  text-decoration: none;
+  margin-bottom: 10px;
+  color: #555;
+  font-size: 1.8rem;
 }
 
 .trucksList__link:visited {
-	color: #555;
+  color: #555;
 }
 
 @media screen and (min-width: 437px) {
-	.pageHeading__word {
-		display: inline-block;
-		font-size: 3rem;
-		letter-spacing: 4px;
-		margin-right: 12px;
-	}
+  .pageHeading__word {
+    display: inline-block;
+    font-size: 3rem;
+    letter-spacing: 4px;
+    margin-right: 12px;
+  }
 }
 
 @media screen and (min-width: 496px) {
-	.logo {
-		margin: -40px auto 0 auto;
-	}
-	.foodTruckNav {
-		width: 450px;
-		margin: 0 auto;
-	}
-	.foodTruckNav__item {
-		display: inline-block;
-		min-width: 140px;
-		width: auto;
-		margin-right: 8px;
-	}
+  .logo {
+    margin: -40px auto 0 auto;
+  }
+  .foodTruckNav {
+    width: 450px;
+    margin: 0 auto;
+  }
+  .foodTruckNav__item {
+    display: inline-block;
+    min-width: 140px;
+    width: auto;
+    margin-right: 8px;
+  }
 }

@@ -8,28 +8,28 @@ var FoodTruckItemView = require('./FoodTruckItemView');
 var FoodTruckView = require('./FoodTruckView');
 
 module.exports = Backbone.View.extend({
-	className: 'allTrucksList',
- 	template: TFT.allFoodTrucks,
- 	_children: [],
- 	render: function () {
+  className: 'allTrucksList',
+  template: TFT.allFoodTrucks,
+  _children: [],
+  render: function () {
 
- 		this.$el.append(this.template());
+    this.$el.append(this.template());
 
- 		this.collection.each(function (model) {
+    this.collection.each(function (model) {
 
- 			var itemView = new FoodTruckItemView({ model: model });
+      var itemView = new FoodTruckItemView({ model: model });
 
- 			this._children.push(itemView);
- 			this.$('.trucksList').append(itemView.render().el);
- 		}, this);
+      this._children.push(itemView);
+      this.$('.trucksList').append(itemView.render().el);
+    }, this);
 
- 		return this;
- 	},
- 	remove: function () {
+    return this;
+  },
+  remove: function () {
 
- 		_.each(this._children, function (view) {
- 			view.remove();
- 		});
- 		Backbone.View.prototype.remove.call(this);
- 	}
+    _.each(this._children, function (view) {
+      view.remove();
+    });
+    Backbone.View.prototype.remove.call(this);
+  }
 });

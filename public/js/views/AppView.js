@@ -8,12 +8,12 @@ var ResultsView = require('./ResultsView');
 var FoodTrucks = require('../collections/FoodTrucks');
 
 module.exports = Backbone.View.extend({
-	initialize: function () {
+  initialize: function () {
 
-		var foodTrucks = new FoodTrucks();
-		var navView = new NavView({ el: '.foodTruckNav' });
-		var resultsView = new ResultsView({ el: '.results', collection: foodTrucks });
+    var foodTrucks = new FoodTrucks();
+    var navView = new NavView({ el: '.foodTruckNav' });
+    var resultsView = new ResultsView({ el: '.results', collection: foodTrucks });
 
-		foodTrucks.fetch();
-	}
+    foodTrucks.fetch();
+  }
 });

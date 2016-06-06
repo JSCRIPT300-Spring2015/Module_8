@@ -6,34 +6,34 @@ var Backbone = require('backbone');
 var FoodTruckItemView = require('./FoodTruckItemView');
 
 module.exports = Backbone.View.extend({
-	className: 'todayList',
-	template: TFT.trucksToday,
-	_children: [],
-	initialize: function (options) {
+  className: 'todayList',
+  template: TFT.trucksToday,
+  _children: [],
+  initialize: function (options) {
 
-		if (options) {
-			this.today = options.today;
-		}
-	},
-	render: function () {
+    if (options) {
+      this.today = options.today;
+    }
+  },
+  render: function () {
 
-		var data = { today: this.today };
+    var data = { today: this.today };
 
-		this.$el.append(this.template(data));
-		this.collection.each(function (model) {
-			var itemView = new FoodTruckItemView({ model: model });
+    this.$el.append(this.template(data));
+    this.collection.each(function (model) {
+      var itemView = new FoodTruckItemView({ model: model });
 
-			this._children.push(itemView);
-			this.$('.trucksList').append(itemView.render().el);
-		}, this);
+      this._children.push(itemView);
+      this.$('.trucksList').append(itemView.render().el);
+    }, this);
 
-		return this;
-	},
- 	remove: function () {
+    return this;
+  },
+  remove: function () {
 
- 		_.each(this._children, function (view) {
- 			view.remove();
- 		});
- 		Backbone.View.prototype.remove.call(this);
- 	}
+    _.each(this._children, function (view) {
+      view.remove();
+    });
+    Backbone.View.prototype.remove.call(this);
+  }
 });
